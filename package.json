@@ -9,9 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "classnames": "^2.5.1",
+    "lodash": "^4.17.21",
+    "lucide-react": "^0.365.0",
     "next": "14.1.4",
+    "nodemon": "^3.1.0",
     "peerjs": "^1.5.2",
     "react": "^18",
+    "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "^18",
     "react-player": "^2.15.1",
     "socket.io": "^4.7.5",
@@ -25,5 +30,10 @@
     "postcss": "^8",
     "postcss-nesting": "^12.1.1",
     "tailwindcss": "^3.3.0"
-  }
+  },
+  "description": "This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).",
+  "main": "postcss.config.js",
+  "author": "Omkara",
+  "license": "ISC",
+  "keywords": []
 }
