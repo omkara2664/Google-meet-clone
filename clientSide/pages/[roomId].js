@@ -15,7 +15,7 @@ const Room = () => {
     const { roomId } = useRouter().query;
     const { peer, myId } = usePeer();
     const { stream } = useMediaStream();
-    const { players, setPlayers, playerHighlighted, nonHighlightedPlayers, toggleAudio, toggleVideo, leaveRoom } = usePlayer(myId, roomId, peer, socket);  // Why I passing the myId because I want to same myId in the players object if there I will call peerHook then it will return new peer id.  But we are using the older one
+    const { players, setPlayers, playerHighlighted, nonHighlightedPlayers, toggleAudio, toggleVideo, leaveRoom } = usePlayer(myId, roomId, peer);  // Why I passing the myId because I want to same myId in the players object if there I will call peerHook then it will return new peer id.  But we are using the older one
 
     // for handling the disconnect users we need to explicitly remove connection with this user
     const [users, setUsers] = useState([]);
