@@ -3,7 +3,7 @@ import { cloneDeep } from 'lodash';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 
-const usePlayer = (myId, roomId, peer) => {
+const usePlayer = (myId, roomId, peer, stream) => {
     const socket = useSocket();
     const [players, setPlayers] = useState({});
     const router = useRouter();
