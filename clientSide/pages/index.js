@@ -22,8 +22,8 @@ export default function Home() {
   }
 
   return (
-    <div className={style.homeContainer}>
-      <h1>Google Meet Clone</h1>
+    <div className={`${style.homeContainer} bg-[#259AE6]`}>
+      <h1>My Typingwala</h1>
       <div className={style.enterRoom}>
         <input
           placeholder='Enter Room ID'

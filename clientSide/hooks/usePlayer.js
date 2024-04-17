@@ -3,7 +3,7 @@ import { cloneDeep } from 'lodash';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 
-const usePlayer = (myId, roomId, peer) => {
+const usePlayer = (myId, roomId, peer, socket) => {
     const socket = useSocket();
     const [players, setPlayers] = useState({});
     const router = useRouter();
@@ -15,6 +15,10 @@ const usePlayer = (myId, roomId, peer) => {
     const nonHighlightedPlayers = playersCopy;
 
     const leaveRoom = () => {
+        if (stream) {
+            stream.getTracks().forEach(track => track.stop());
+        }
+
         socket.emit('leave-room', myId, roomId);
         console.log("Leaving room", roomId);
         peer?.disconnect();

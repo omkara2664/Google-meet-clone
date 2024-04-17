@@ -18,8 +18,24 @@ const usePeer = () => {
          * Because we are doing SSR in next js
          * wy is in useEffect -> because peerjs need to navigator (navigator is not defined) and navigator is a web api
          */
+
+        let myPeer;
         (async function initPeer() {
-            const myPeer = new (await import('peerjs')).default();  // whatever default we imported and () this means we are calling the constructor
+            // For local peer
+            // myPeer = new (await import('peerjs')).default();  // whatever default we imported and () this means we are calling the constructor
+
+            // For online peer
+
+            myPeer = new (await import('peerjs')).default('', {
+                host: '0.peerjs.com',
+                secure: true,
+            });
+
+            // const myPeer = new Peer(undefined, {
+            //     host: 'peerjs-server.herokuapp.com',
+            //     secure: true,
+            // });
+
             setPeer(myPeer);
 
             myPeer.on('open', (id) => {
