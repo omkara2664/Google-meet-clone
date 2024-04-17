@@ -10,7 +10,7 @@ const useMediaStream = () => {
         (async function initStream() {
             try {
                 // Navigator is an web api or user agent
-                const stream = await navigator?.mediaDevices?.getDisplayMedia({
+                const stream = await navigator?.mediaDevices?.getUserMedia({
                     video: true,
                     audio: true
                 });
